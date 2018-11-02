@@ -1,0 +1,168 @@
+header.page-header {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  @include flex;
+  @include prefix(flex-direction, column);
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-sizing: border-box;
+  width: $header-width;
+  padding: $page-padding;
+  padding-right: 0;
+  color: $charcoal;
+
+  @media (min-width: $oversize-media) {
+    left: calc(50% - #{($page-padding * 4 + $content-sidebar-width + $content-width) / 2 + $header-width});
+  }
+
+  @media (max-width: $large-media) and (min-width: $medium-media) {
+    width: $header-width - $page-padding;
+  }
+
+  @media (max-width: $medium-media) {
+    position: relative;
+    width: 100vw;
+    padding-right: $page-padding;
+  }
+
+  @media (max-width: $mobile-media) {
+    padding: $page-padding / 2;
+  }
+
+  .night-mode & {
+    color: $grey;
+
+    a {
+      border-bottom-color: $grey-dark;
+
+      &:hover {
+        border-bottom-color: $grey;
+      }
+    }
+  }
+
+  > div {
+    @include prefix(flex-grow, 1);
+  }
+
+  p {
+    margin-top: 2.5em;
+    @include prefix(animation, fade-in 1s ease-out 1);
+
+    @media (max-width: $medium-media) {
+      margin-top: 1.5em;
+    }
+  }
+
+  .no-underline {
+    border-bottom: 0;
+
+    @media (max-width: $mobile-media) {
+      padding-right: 20px;
+    }
+  }
+}
+
+.night-mode-toggle {
+  @include flex;
+  @include prefix(align-items, flex-end);
+  @include prefix(flex-grow, 1);
+  padding-top: $page-padding;
+  @include prefix(animation, fade-in 1s ease-out 1);
+  @include prefix(animation-delay, 1s);
+  @include prefix(animation-fill-mode, both);
+
+  @media (max-width: $medium-media) {
+    position: absolute;
+    right: $page-padding;
+    bottom: $page-padding;
+    padding: 0;
+  }
+
+  @media (max-width: $mobile-media) {
+    right: $page-padding / 2;
+    bottom: $page-padding;
+  }
+
+  label {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 12px;
+    cursor: pointer;
+    @include prefix(user-select, none);
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      box-sizing: border-box;
+    }
+
+    &::before {
+      top: 3px;
+      left: 3px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: $grey;
+      @include transition;
+    }
+
+    &::after {
+      width: 100%;
+      height: 100%;
+      border: 2px solid $grey;
+      border-radius: 6px;
+    }
+  }
+
+  input {
+    display: none;
+
+    &:checked {
+
+      + label::before {
+        left: 11px;
+      }
+    }
+  }
+
+  span {
+    margin-left: 5px;
+    font-size: 11px;
+    line-height: 0.9em;
+
+    &.on {
+      display: none;
+    }
+  }
+
+  .night-mode & {
+
+    label {
+
+      &::before {
+        background-color: rgb(246, 227, 100);
+      }
+
+      &::after {
+        border-color: rgb(246, 227, 100);
+      }
+    }
+
+    span {
+
+      &.on {
+        display: inline-block;
+      }
+
+      &.off {
+        display: none;
+      }
+    }
+  }
+}

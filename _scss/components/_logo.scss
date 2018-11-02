@@ -1,0 +1,32 @@
+svg.logo {
+  width: 60px;
+  height: 60px;
+
+  path.script {
+    stroke: $charcoal;
+    stroke-dasharray: 270;
+    @include prefix(animation, logo-stroke 2.33s ease-out 1);
+    @include prefix(animation-delay, 0.66s);
+    @include prefix(animation-fill-mode, backwards);
+    @include transition($property: stroke-dashoffset, $duration: 2s, $timing: ease-out);
+
+    .night-mode & {
+      stroke: $grey;
+    }
+  }
+
+  &:hover path.script {
+    stroke-dashoffset: 270;
+    transition-timing-function: ease-in;
+  }
+}
+
+@include keyframes(logo-stroke) {
+  0% {
+    stroke-dashoffset: 270;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}

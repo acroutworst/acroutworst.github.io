@@ -1,0 +1,223 @@
+.content-panels {
+  box-sizing: border-box;
+  width: calc(100vw - #{$header-width});
+  max-width: $page-padding * 4 + $content-sidebar-width + $content-width;
+  padding: $page-padding;
+  margin-left: $header-width;
+  font-size: 0;
+
+  @media (min-width: $oversize-media) {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @media (max-width: $large-media) and (min-width: $medium-media) {
+    width: calc(100vw - #{$header-width - $page-padding});
+    padding-right: $page-padding / 2;
+    margin-left: $header-width - $page-padding;
+  }
+
+  @media (max-width: $medium-media) {
+    width: 100%;
+    max-width: none;
+    padding-top: 0;
+    margin-left: 0;
+  }
+
+  @media (max-width: $mobile-media) {
+    padding: 0;
+  }
+}
+
+.content-panel {
+  @include flex;
+  overflow: hidden;
+  box-sizing: border-box;
+  min-height: calc(100vh - #{$page-padding} * 3);
+  margin-bottom: $page-padding;
+  border-radius: $radius;
+  background-color: $white;
+  box-shadow: 0 1px 3px rgba($black, 0.2);
+  font-size: 0;
+  @include transition($property: background-color);
+
+  @media (min-height: 900px) {
+    min-height: 800px;
+  }
+
+  @media (max-width: $large-media) and (min-width: $medium-media) {
+
+    &:not(.content-panel-small) {
+
+      .content-panel-header {
+        width: $content-sidebar-width - $page-padding * 2;
+        padding-right: $page-padding / 2;
+      }
+
+      figure {
+        padding-right: $page-padding / 2;
+        padding-left: $page-padding / 2;
+      }
+    }
+  }
+
+  @media (max-width: $small-media) {
+    @include prefix(flex-direction, column);
+    min-height: 0;
+  }
+
+  @media (max-width: $mobile-media) {
+    margin-bottom: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  &:first-child,
+  &:nth-child(2) {
+    @include prefix(animation, fade-in 1s ease-out 1);
+    @include prefix(animation-fill-mode, both);
+  }
+
+  &:first-child {
+    @include prefix(animation-delay, 0.33s);
+  }
+
+  &:nth-child(2) {
+    @include prefix(animation-delay, 0.66s);
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .content-panel-header,
+  figure {
+    box-sizing: border-box;
+    padding: $page-padding;
+
+    @media (max-width: $mobile-media) {
+      padding-right: $page-padding / 2;
+      padding-left: $page-padding / 2;
+    }
+  }
+
+  .content-panel-header {
+    width: $content-sidebar-width;
+    @include prefix(flex-shrink, 0);
+
+    @media (max-width: $small-media) {
+      width: 100%;
+    }
+
+    hr {
+      margin: $page-padding 0;
+    }
+  }
+
+  figure {
+    width: 100%;
+    pointer-events: none;
+
+    &:empty {
+      padding: 0;
+    }
+  }
+
+  .image-gallery {
+
+    @media (max-width: $mobile-media) {
+      padding: 0;
+    }
+
+    img {
+      border-radius: $radius;
+      background-color: $grey-light;
+      box-shadow: 0 1px 3px rgba($black, 0.2);
+
+      @media (max-width: $mobile-media) {
+        display: block;
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      + img {
+        margin-top: $page-padding / 2;
+
+        @media (max-width: $mobile-media) {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  .image-gallery-small {
+    @include prefix(columns, 2 auto);
+    @include prefix(column-gap, $page-padding / 2);
+
+    @media (max-width: $mobile-media) {
+      @include prefix(columns, 2);
+    }
+
+    .gallery-span {
+      @include prefix(column-span, all);
+    }
+  }
+
+  h1 > a {
+
+    &[href^="#"] {
+      border-bottom: 0;
+
+      &::before {
+        content: '';
+        display: block;
+        visibility: hidden;
+        height: $page-padding * 3.25;
+        margin-top: $page-padding * -3.25;
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.content-panel-small {
+  @include flex(inline-flex);
+  width: calc(50% - #{$page-padding / 2});
+  min-height: 360px;
+
+  @media (max-width: $mobile-media) {
+    width: 100%;
+    min-height: 0;
+    border-bottom: 1px solid $grey-light;
+
+    .night-mode & {
+      border-bottom-color: $grey-dark;
+    }
+  }
+
+  + .content-panel-small {
+    margin-left: $page-padding;
+
+    @media (max-width: $mobile-media) {
+      margin-left: 0;
+    }
+  }
+
+  .content-panel-header {
+    width: 100%;
+  }
+}
+
+@keyframes(fade-in) {
+  0% {
+    opacity: 0;
+    @include prefix(transform, translateY(10px) scale(0.98));
+  }
+
+  100% {
+    opacity: 1;
+    @include prefix(transform, none);
+  }
+}

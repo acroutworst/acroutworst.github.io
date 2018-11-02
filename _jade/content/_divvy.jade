@@ -1,0 +1,25 @@
+extends content
+
+block variables
+  - var classname = "divvy"
+  - var smallpanel = false
+
+block header
+  h1.white-text
+    a(id="#{classname}", href="http://divvy.lol", target="blank") Divvy
+
+block description
+  p.white-text
+    | I designed and developed the Divvy 
+    strong web app 
+    | to easily split bills between friends.
+    | Add the expenses for each person and Divvy will find the most efficient sequence of repayments.
+  hr.white-line
+  a.button-white(href="http://divvy.lol", target="blank") http://divvy.lol &rarr;
+
+block figure
+  figure
+    img(srcset="/img/divvy.png 1x, /img/divvy@2x.png 2x" alt="Divvy web app")
+    .divvy-recording
+      .notch
+      img(srcset="/img/divvy.gif 1x, /img/divvy@2x.gif 2x" alt="Divvy web app")

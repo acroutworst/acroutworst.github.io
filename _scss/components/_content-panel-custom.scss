@@ -1,0 +1,345 @@
+.content-panel {
+
+  &.content-panel-small,
+  &.sharedesk-panel,
+  &.ios86-panel {
+
+    .night-mode & {
+      background-color: $charcoal;
+      color: $grey;
+
+      a {
+        border-bottom-color: $grey-dark;
+
+        &:hover {
+          border-bottom-color: $grey;
+        }
+      }
+
+      .grey-text {
+        color: $grey-dark;
+      }
+
+      .button,
+      .button-black {
+        background-color: $grey-dark;
+        color: $grey-light;
+
+        &:hover {
+          background-color: $grey;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  &.dede-panel {
+    background-color: $grey-light;
+    background-image: url('/img/dede-bg@2x.jpg');
+    background-position: 100% 0;
+    background-size: cover;
+
+    @media (max-width: $mobile-media) {
+      background-position: 80% 0;
+    }
+
+    .content-panel-header {
+      padding-bottom: 100px;
+
+      @media (max-width: $small-media) {
+        background-color: rgba($white, 0.5);
+      }
+    }
+
+    h1,
+    p {
+      text-shadow: 1px 1px rgba($white, 0.33);
+    }
+
+    a {
+      border-bottom-color: $grey;
+
+      &:hover {
+        border-bottom-color: $grey-dark;
+      }
+    }
+  }
+
+  &.attract-panel {
+    background-color: rgb(255, 102, 111);
+    background-image: url('/img/attract-pattern@2x.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+
+    a {
+      border-bottom-color: rgb(220, 70, 110);
+
+      &:hover {
+        border-bottom-color: rgb(70, 20, 170);
+      }
+    }
+
+    hr {
+      @include dotted-line($color: rgb(220, 70, 110));
+    }
+
+    figure {
+
+      img {
+        box-shadow: 0 10px 33px rgb(220, 70, 110);
+      }
+
+      @media (max-width: $mobile-media) {
+        padding: $page-padding ($page-padding / 2);
+
+        img:last-child {
+          display: none;
+        }
+      }
+    }
+
+    @media (max-width: $small-media) {
+
+      .content-panel-header {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &.scrunch-panel {
+    background-image: url('/img/scrunch-pattern-bg@2x.jpg');
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 531px 504px;
+
+    @media (max-width: $mobile-media) {
+      background-position: 0 60%;
+
+      img:not(.gallery-span) {
+        display: none;
+      }
+    }
+  }
+
+  &.divvy-panel {
+    background-color: rgb(30, 150, 255);
+
+    .content-panel-header {
+      background-color: rgb(50, 170, 255);
+
+      @media (max-width: $mobile-media) {
+        background-color: rgb(30, 150, 255);
+      }
+    }
+
+    figure {
+      position: relative;
+      background-image: url('/img/divvy-bg@2x.png');
+      background-size: 98px;
+
+      @media (max-width: $mobile-media) {
+        padding-top: 0;
+        padding-bottom: 0;
+        background-image: none;
+
+        > img {
+          display: none;
+        }
+      }
+    }
+
+    .divvy-recording {
+      position: absolute;
+      bottom: 0;
+      left: $page-padding * 2;
+      padding: 7px;
+      padding-bottom: 0;
+      border-top-left-radius: 22px;
+      border-top-right-radius: 22px;
+      background-color: $charcoal;
+      box-shadow: 0 20px 60px rgba($charcoal, 0.33);
+
+      @media (max-width: $small-media) {
+        right: $page-padding;
+        left: auto;
+      }
+
+      @media (max-width: $mobile-media) {
+        position: relative;
+        right: auto;
+      }
+
+      img {
+        max-width: 240px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+
+        @media (max-width: $small-media) {
+          max-width: 210px;
+        }
+
+        @media (max-width: $mobile-media) {
+          max-width: none;
+        }
+      }
+
+      .notch {
+        position: absolute;
+        top: 7px;
+        left: 25%;
+        width: 50%;
+        height: 4%;
+        border-bottom-right-radius: 11px;
+        border-bottom-left-radius: 11px;
+        background-color: $charcoal;
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          width: 0;
+          height: 0;
+          border: 0.5px solid $charcoal;
+        }
+
+        &::before {
+          left: -1px;
+          border-bottom-color: transparent;
+          border-left-color: transparent;
+        }
+
+        &::after {
+          right: -1px;
+          border-right-color: transparent;
+          border-bottom-color: transparent;
+        }
+      }
+    }
+  }
+
+  &.sharedesk-panel {
+
+    figure {
+      padding: 0;
+      background-color: rgb(62, 42, 160);
+
+      @media (max-width: $mobile-media) {
+        padding-bottom: 40px;
+      }
+    }
+
+    @media (max-width: $large-media) {
+
+      &:not(.content-panel-small) figure {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+
+    @media (max-width: $small-media) {
+      background-color: rgb(62, 42, 160);
+
+      h1,
+      p:not(.grey-text) {
+        color: $white;
+
+        a:not(:hover) {
+          border-bottom-color: rgba($white, 0.33);
+        }
+      }
+    }
+  }
+
+  &.photo-browser-panel {
+    background-color: $grey;
+    background-image: url('/photo/img/ijen-miner-01@2x.jpg');
+    background-position: center;
+    background-size: cover;
+
+    @media (max-width: $small-media) {
+      padding-bottom: 50%;
+
+      p {
+        max-width: 70%;
+      }
+    }
+
+    @media (max-width: $mobile-media) {
+      padding-bottom: 60%;
+
+      p {
+        max-width: 90%;
+      }
+    }
+
+    h1,
+    p,
+    hr {
+      color: $white;
+      mix-blend-mode: exclusion;
+    }
+  }
+
+  &.threads-network-panel {
+    background-color: rgb(242, 124, 97);
+    background-image: url('/img/grunge-bg@2x.png');
+    background-size: 400px;
+
+    .night-mode & {
+      background-color: rgb(230, 111, 81);
+    }
+
+    figure {
+
+      @media (max-width: $mobile-media) {
+        padding-top: 0;
+        padding-right: 40px;
+        padding-left: 40px;
+      }
+
+      img {
+        max-width: 367px;
+        margin: 95px auto;
+
+        @media (max-width: $small-media) {
+          margin-top: 0;
+          margin-bottom: $page-padding;
+        }
+
+        @media (max-width: $mobile-media) {
+          margin-top: 0;
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+
+  &.ios86-panel {
+
+    figure {
+      background-image: url('/img/ios86-bg@2x.jpg');
+      background-position: center;
+      background-size: cover;
+
+      @media (max-width: $small-media) {
+        min-height: 50vw;
+      }
+    }
+  }
+
+  &.sarif-panel {
+    background-color: $grey-dark;
+    background-image: url('/img/sarif-bg@2x.jpg');
+    background-position: 75% 50%;
+    background-size: cover;
+
+    @media (max-width: $small-media) {
+
+      .content-panel-header {
+        background-color: rgba($charcoal, 0.33);
+      }
+    }
+  }
+}

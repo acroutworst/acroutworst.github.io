@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Double exposure depth experiment &rarr; Cody Lindsay Gordon</title>
+    <meta name="description" content="A web experiment exploring tangible methods of interacting with digital photographs.">
+    <meta name="robots" content="NOODP">
+    <meta name="theme-color" content="#26282e">
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <meta name="author" content="Cody Lindsay Gordon">
+    <meta name="google-site-verification" content="ZkjeR5dDgGZ5iIrCxvCjqgPrhHp6dco-Jck7IWutYZo">
+    <meta property="og:title" content="Double exposure depth experiment">
+    <meta property="og:site_name" content="Cody Lindsay Gordon">
+    <meta property="og:description" content="A web experiment exploring tangible methods of interacting with digital photographs.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://clg.name/dede/why">
+    <meta property="og:image" content="http://clg.name/dede/backup@2x.jpg">
+    <link rel="apple-touch-icon" href="touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="touch-icon-iphone-plus-retina.png">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/styles.css" async>
+    <script type="text/javascript" src="/static/picturefill.min.js" async></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-42238629-10', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <link rel="stylesheet" href="/dede/dede.css" async>
+  </head>
+  <body>
+    <div class="dede-why">
+      <section>
+        <header>
+          <div>
+            <p>&larr; <a href="../">Go back</a></p>
+            <p><a href="/">Go to clg.name</a>&nbsp;&rarr;</p>
+          </div>
+        </header>
+        <h1>Q: What's this all about?</h1>
+        <p>A: This is an experiment combining some new CSS properties and JS events with photography; <strong>exploring tangible methods of interacting with digital photographs</strong>.
+          Layers of the exposure are blended together in the browser using the <code>mix-blend-mode</code> property. These layers are then trimmed to the silhouette with the <code>mask-image</code> property.
+        </p>
+        <h1>Devices</h1>
+        <p>
+          If you're visiting on a device with a cursor, the exposure will react to mouseovers.
+          This is probably the ideal device type to view this experiment with.
+          The cursor coordinates are used to apply transforms (translations and rotations) across the layers of the exposure.
+        </p>
+        <p>
+          If you're visiting on a device with an accelerometer — e.g. a smartphone — you'll see the exposure react to the device tilting and panning.
+          The <code>deviceorientation</code> event sends down the <code>beta</code> and <code>gamma</code> orientation, which is then adjusted and applied as transforms (translations) across the layers of the exposure.
+        </p>
+        <h1>@supports</h1>
+        <p>Browsers that don't support CSS masking or blend modes will load a static backup image instead.</p>
+        <h1>Plugs</h1>
+        <p>Check out my Instagram <a href="https://instagram.com/clg_aus" target="_blank">@clg_aus</a> for more photography or <a href="/">clg.name</a> for more web stuff.</p>
+      </section>
+    </div>
+    <script type="text/javascript" src="/static/app.min.js" async></script>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+::selection {
+  background-color: $charcoal;
+  text-shadow: none;
+  color: $white;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100vw;
+  max-width: 100%;
+  margin: 0;
+  background-color: $off-white;
+  font-family: $font;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.6em;
+  color: $charcoal;
+  @include font-antialias;
+  @include transition($property: background-color);
+  -webkit-tap-highlight-color: transparent;
+
+  &.night-mode {
+    background-color: $charcoal-dark;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 1em 0;
+  font-family: $font;
+  font-weight: 400;
+  line-height: 1.2em;
+}
+
+h1 {
+  font-size: 2.8rem;
+}
+
+h2 {
+  font-size: 2.4rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.8rem;
+}
+
+h5 {
+  font-size: 1.6rem;
+}
+
+article ol,
+article ul,
+article td,
+p {
+  margin: 1.5em 0;
+  font-family: $font;
+  font-size: 1.4rem;
+}
+
+a,
+a:visited,
+a:active,
+a:focus {
+  text-decoration: none;
+  outline: none;
+  @include transition;
+}
+
+a {
+  color: inherit;
+}
+
+h1 > a,
+h2 > a,
+h3 > a,
+h4 > a,
+p > a,
+ol > a,
+ul > a,
+.underline-link {
+  border-bottom: 2px solid $grey-light;
+
+  &:focus:not(:hover) {
+    border-bottom: 0;
+    background-color: rgba($charcoal, 0.15);
+  }
+
+  &:hover {
+    border-bottom-color: $grey;
+  }
+}
+
+ul ul {
+  list-style-type: circle;
+}
+
+hr {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin: 2em 0;
+  border: 0;
+  @include dotted-line;
+
+  &.white-line {
+    @include dotted-line($color: $white);
+  }
+
+  &.black-line {
+    @include dotted-line($color: $charcoal);
+  }
+}
+
+figure {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
