@@ -129,6 +129,133 @@
     }
   }
 
+  &.vital-panel {
+    background-color: $grey-light;
+    background-image: url('/img/vital-signs.png');
+    background-position: 100%;
+    background-size: cover;
+
+    @media (max-width: $mobile-media) {
+      background-position: 80% 0;
+    }
+
+    .content-panel-header {
+      padding-bottom: 100px;
+
+      @media (max-width: $small-media) {
+        background-color: rgba($white, 0.5);
+      }
+    }
+
+    h1,
+    p {
+      text-shadow: 1px 1px rgba($white, 0.33);
+    }
+
+    a {
+      border-bottom-color: $grey;
+
+      &:hover {
+        border-bottom-color: $grey-dark;
+      }
+    }
+  }
+
+  &.papar-panel {
+    background-color: $grey-light;
+    background-image: url('/img/papar-full.png');
+    background-position: 100%;
+    background-size: cover;
+
+    @media (max-width: $mobile-media) {
+      background-position: 80% 0;
+    }
+
+    .content-panel-header {
+      padding-bottom: 100px;
+
+      @media (max-width: $small-media) {
+        background-color: rgba($white, 0.5);
+      }
+    }
+
+    h1,
+    p {
+      text-shadow: 1px 1px rgba($white, 0.33);
+    }
+
+    a {
+      border-bottom-color: $grey;
+
+      &:hover {
+        border-bottom-color: $grey-dark;
+      }
+    }
+  }
+
+  &.jubil-panel {
+    background-color: $grey-light;
+    background-image: url('/img/jubil-full.png');
+    background-position: 100%;
+    background-size: cover;
+
+    @media (max-width: $mobile-media) {
+      background-position: 80% 0;
+    }
+
+    .content-panel-header {
+      padding-bottom: 100px;
+
+      @media (max-width: $small-media) {
+        background-color: rgba($white, 0.5);
+      }
+    }
+
+    h1,
+    p {
+      text-shadow: 1px 1px rgba($white, 0.33);
+    }
+
+    a {
+      border-bottom-color: $grey;
+
+      &:hover {
+        border-bottom-color: $grey-dark;
+      }
+    }
+  }
+
+  &.buzzer-panel {
+    background-color: $grey-light;
+    background-image: url('/img/jubil-full.png');
+    background-position: 100%;
+    background-size: cover;
+
+    @media (max-width: $mobile-media) {
+      background-position: 80% 0;
+    }
+
+    .content-panel-header {
+      padding-bottom: 100px;
+
+      @media (max-width: $small-media) {
+        background-color: rgba($white, 0.5);
+      }
+    }
+
+    h1,
+    p {
+      text-shadow: 1px 1px rgba($white, 0.33);
+    }
+
+    a {
+      border-bottom-color: $grey;
+
+      &:hover {
+        border-bottom-color: $grey-dark;
+      }
+    }
+  }
 
   &.attract-panel {
     background-color: rgb(255, 102, 111);
