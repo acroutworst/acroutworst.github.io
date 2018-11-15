@@ -68,7 +68,7 @@
   &.kasarra-panel {
     background-color: $grey-light;
     background-image: url('/img/kasarra-full.jpg');
-    background-position: 100%;
+    background-position: 100% 0;
     background-size: cover;
 
     @media (max-width: $mobile-media) {
@@ -100,7 +100,7 @@
   &.fly-panel {
     background-color: $grey-light;
     background-image: url('/img/fly-web.png');
-    background-position: 100%;
+    background-position: 100% 0;
     background-size: cover;
 
     @media (max-width: $mobile-media) {
@@ -132,7 +132,7 @@
   &.vital-panel {
     background-color: $grey-light;
     background-image: url('/img/vital-signs.png');
-    background-position: 100%;
+    background-position: 100% 0;
     background-size: cover;
 
     @media (max-width: $mobile-media) {
@@ -164,7 +164,7 @@
   &.papar-panel {
     background-color: $grey-light;
     background-image: url('/img/papar-full.png');
-    background-position: 100%;
+    background-position: 100% 0;
     background-size: cover;
 
     @media (max-width: $mobile-media) {
@@ -196,7 +196,7 @@
   &.jubil-panel {
     background-color: $grey-light;
     background-image: url('/img/jubil-full.png');
-    background-position: 100%;
+    background-position: 100% 0;
     background-size: cover;
 
     @media (max-width: $mobile-media) {
@@ -227,8 +227,8 @@
 
   &.buzzer-panel {
     background-color: $grey-light;
-    background-image: url('/img/jubil-full.png');
-    background-position: 100%;
+    background-image: url('/img/buzzer-razor.png');
+    background-position: 100% 0;
     background-size: cover;
 
     @media (max-width: $mobile-media) {
