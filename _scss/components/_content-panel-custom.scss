@@ -65,6 +65,71 @@
     }
   }
 
+  &.kasarra-panel {
+    background-color: $grey-light;
+    background-image: url('/img/kasarra-full.jpg');
+    background-position: 100%;
+    background-size: cover;
+
+    @media (max-width: $mobile-media) {
+      background-position: 80% 0;
+    }
+
+    .content-panel-header {
+      padding-bottom: 100px;
+
+      @media (max-width: $small-media) {
+        background-color: rgba($white, 0.5);
+      }
+    }
+
+    h1,
+    p {
+      text-shadow: 1px 1px rgba($white, 0.33);
+    }
+
+    a {
+      border-bottom-color: $grey;
+
+      &:hover {
+        border-bottom-color: $grey-dark;
+      }
+    }
+  }
+
+  &.fly-panel {
+    background-color: $grey-light;
+    background-image: url('/img/fly-web.png');
+    background-position: 100%;
+    background-size: cover;
+
+    @media (max-width: $mobile-media) {
+      background-position: 80% 0;
+    }
+
+    .content-panel-header {
+      padding-bottom: 100px;
+
+      @media (max-width: $small-media) {
+        background-color: rgba($white, 0.5);
+      }
+    }
+
+    h1,
+    p {
+      text-shadow: 1px 1px rgba($white, 0.33);
+    }
+
+    a {
+      border-bottom-color: $grey;
+
+      &:hover {
+        border-bottom-color: $grey-dark;
+      }
+    }
+  }
+
+
   &.attract-panel {
     background-color: rgb(255, 102, 111);
     background-image: url('/img/attract-pattern@2x.png');
